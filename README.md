@@ -65,7 +65,7 @@ In jack's home directory we see an id.sh file, and a test.txt file:
 
 ![id sh](https://github.com/user-attachments/assets/c37def8b-c2c7-4274-b638-c1eed36db692)
 
-By looking at test.txt we can see that id.sh is running id.sh with the output of id. We can also write to id.sh, so we can use this to escalate to root, and id.sh is being executed by a cronjob every minute.
+By looking at test.txt we can see that id.sh is being run as root, based on the output of id. We can also write to id.sh, so we can use this to escalate to root, and id.sh is being executed by a cronjob every minute.
 
 We will write to id.sh and add the line chmod u+s /bin/bash to set the SUID bit for /bin/bash, which will alow us to run /bin/bash as root:
 
