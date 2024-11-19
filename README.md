@@ -34,4 +34,34 @@ Target IP: This is a placeholder for the target IP address you want to scan. In 
 
 Output in Normal Format: This option saves the scan results in a plain text file format. After -oN, specify a filename where you want to store the output.
 
-The scan reveals a simple http web server on port 8000, and ssh.
+The scan reveals three open ports including a simple http web server on port 8080.
+
+![nmap](https://github.com/user-attachments/assets/7dfd6640-2b53-4d6d-bcda-b1e25ecf49b9)
+
+When we visit the ip:8080 we get the default apache tomcat page. Let's run a gobuster scan on $ip:8080.
+
+![buster](https://github.com/user-attachments/assets/0d164a8c-413a-4726-9167-fb3c4ceac7d5)
+
+When we visit the /manager directory a pop up prompts for user and password. I tried some of the usual defaults but no luck. However, when we click cancel it shows us some credentials:
+
+![creds](https://github.com/user-attachments/assets/6425c364-4cf7-414a-b4fc-b106bce24ce7)
+
+Refresh the page and use those credentials to log into the manger site. 
+Here we see a listing of directories plus an upload panel for war files. Let's use msfvenom to create a war reverse shell payload:
+
+![msf](https://github.com/user-attachments/assets/4076239d-b668-4fb2-9f6a-103313808642)
+
+Now, we just need to upload the file. After that, we just need to click on the war file that is listed above. And we have a shell as tomcat:
+
+![shell](https://github.com/user-attachments/assets/91b3499b-8fd4-4ab7-9d68-2d5f70d4db42)
+
+When we navigate to the home directory, we see user.txt in jack's directory:
+
+![user txt](https://github.com/user-attachments/assets/6cb6d8ac-dd18-4c75-9819-a28e55739495)
+
+
+
+
+
+
+
