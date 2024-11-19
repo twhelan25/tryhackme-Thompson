@@ -71,7 +71,11 @@ We will write to id.sh and add the line chmod u+s /bin/bash to set the SUID bit 
 
 ![exploit](https://github.com/user-attachments/assets/b2a9bcfa-915f-4ebb-9317-77560acbd143)
 
-From there, we just need to head to the root directory and cat our root.txt. I hope you enjoyed this CTF.
+From there, we just need to head to the root directory and cat our root.txt. 
+
+![root txt](https://github.com/user-attachments/assets/c415d9af-b440-4ded-a306-29e3d2e44555)
+
+I hope you enjoyed this CTF.
 
 
 
