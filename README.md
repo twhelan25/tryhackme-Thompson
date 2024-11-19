@@ -59,6 +59,8 @@ When we navigate to the home directory, we see user.txt in jack's directory:
 
 ![user txt](https://github.com/user-attachments/assets/6cb6d8ac-dd18-4c75-9819-a28e55739495)
 
+# Privilege Escalation
+
 In jack's home directory we see an id.sh file, and a test.txt file:
 
 ![id sh](https://github.com/user-attachments/assets/c37def8b-c2c7-4274-b638-c1eed36db692)
@@ -69,7 +71,7 @@ We will write to id.sh and add the line chmod u+s /bin/bash to set the SUID bit 
 
 ![exploit](https://github.com/user-attachments/assets/b2a9bcfa-915f-4ebb-9317-77560acbd143)
 
-
+From there, we just need to head to the root directory and cat our root.txt. I hope you enjoyed this CTF.
 
 
 
