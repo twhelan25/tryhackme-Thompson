@@ -1,6 +1,6 @@
 ![intro](https://github.com/user-attachments/assets/e1d0f3d1-a767-446b-a75f-6b857c6f4137)
 
-This is a walkthrough for the tryhackme CTF Pyrat. I will not provide any flags or passwords as this is intended to be used as a guide. 
+This is a walkthrough for the tryhackme CTF Thompson. I will not provide any flags or passwords as this is intended to be used as a guide. 
 
 ## Scanning/Reconnaissance
 
