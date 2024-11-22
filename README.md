@@ -42,16 +42,16 @@ When we visit the ip:8080 we get the default apache tomcat page. Let's run a gob
 
 ![buster](https://github.com/user-attachments/assets/0d164a8c-413a-4726-9167-fb3c4ceac7d5)
 
-When we visit the /manager directory a pop up prompts for user and password. I tried some of the usual defaults but no luck. However, when we click cancel it shows us some credentials:
+When we visit the /manager directory a pop up prompts for user and password. I tried some of the usual defaults but no luck. However, when we click cancel it shows us some default credentials, I also found that these are common default credentials:
 
 ![creds](https://github.com/user-attachments/assets/6425c364-4cf7-414a-b4fc-b106bce24ce7)
 
 Refresh the page and use those credentials to log into the manger site. 
-Here we see a listing of directories plus an upload panel for war files. Let's use msfvenom to create a war reverse shell payload:
+Here we see a listing of directories plus an upload panel for war files. Let's use msfvenom to create a war file reverse shell payload:
 
 ![msf](https://github.com/user-attachments/assets/4076239d-b668-4fb2-9f6a-103313808642)
 
-Now, we just need to upload the file. After that, we just need to click on the war file that is listed above. And we have a shell as tomcat:
+Now, we just need to upload the file. Then set up a net cat listener on your choosen port. After that, we just need to click on the war file that is listed above, amoung the other directory listings. And we have a shell as tomcat!
 
 ![shell](https://github.com/user-attachments/assets/91b3499b-8fd4-4ab7-9d68-2d5f70d4db42)
 
@@ -65,7 +65,7 @@ In jack's home directory we see an id.sh file, and a test.txt file:
 
 ![id sh](https://github.com/user-attachments/assets/c37def8b-c2c7-4274-b638-c1eed36db692)
 
-By looking at test.txt we can see that id.sh is being run as root, based on the output of id. We can also write to id.sh, so we can use this to escalate to root, and id.sh is being executed by a cronjob every minute.
+By looking at test.txt we can see that id.sh is being run as root, based on the output of id in test.txt. We can also write to id.sh, so we can use this to escalate to root, when id.sh is being executed by a cronjob every minute.
 
 We will write to id.sh and add the line chmod u+s /bin/bash to set the SUID bit for /bin/bash, which will alow us to run /bin/bash as root:
 
