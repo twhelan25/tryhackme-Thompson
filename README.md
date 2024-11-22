@@ -47,7 +47,7 @@ When we visit the /manager directory a pop up prompts for user and password. I t
 ![creds](https://github.com/user-attachments/assets/6425c364-4cf7-414a-b4fc-b106bce24ce7)
 
 Refresh the page and use those credentials to log into the manger site. 
-Here we see a listing of directories plus an upload panel for war files. Let's use msfvenom to create a war file reverse shell payload:
+Here we see a listing of directories plus an upload panel for WAR files. Web Application Archive (WAR) files is a packaged file format used to deploy web applications on Java based servers, like tomcat. Let's use msfvenom to create a war file reverse shell payload:
 
 ![msf](https://github.com/user-attachments/assets/4076239d-b668-4fb2-9f6a-103313808642)
 
